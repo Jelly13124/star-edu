@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isRegionDropdownOpen, setIsRegionDropdownOpen] = useState(false);

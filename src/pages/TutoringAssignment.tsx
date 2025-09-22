@@ -51,7 +51,7 @@ const TutoringAssignment = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-green-100 to-emerald-100">
+      <section className="relative py-20 bg-gradient-to-br from-blue-100 to-sky-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold text-gray-800 mb-6">留学生作业辅导</h1>
@@ -66,7 +66,7 @@ const TutoringAssignment = () => {
               ))}
             </div>
             
-            <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 text-lg font-medium rounded-full">
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 text-lg font-medium rounded-full">
               立即咨询作业辅导
             </Button>
           </div>
@@ -79,7 +79,7 @@ const TutoringAssignment = () => {
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">作业辅导产品</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {products.map((product, index) => (
-              <Card key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 hover:shadow-lg transition-shadow">
+              <Card key={index} className="bg-gradient-to-br from-blue-50 to-sky-50 border-2 border-blue-200 hover:shadow-lg transition-shadow">
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-gray-800 mb-4">{product.title}</h3>
                   <p className="text-gray-600 mb-6">{product.description}</p>
@@ -91,7 +91,7 @@ const TutoringAssignment = () => {
                       </div>
                     ))}
                   </div>
-                  <Button className="bg-green-500 hover:bg-green-600 text-white w-full">
+                  <Button className="bg-blue-500 hover:bg-blue-600 text-white w-full">
                     {product.buttonText}
                   </Button>
                 </CardContent>
@@ -109,8 +109,8 @@ const TutoringAssignment = () => {
             {guarantees.map((guarantee, index) => (
               <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="w-8 h-8 bg-green-500 rounded-full"></div>
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">{guarantee.title}</h3>
                   <p className="text-gray-600 text-sm">{guarantee.description}</p>
@@ -127,9 +127,9 @@ const TutoringAssignment = () => {
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">作业辅导全流程</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {process.map((step, index) => (
-              <Card key={index} className="bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-shadow">
+              <Card key={index} className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white text-xl font-bold">{step.step}</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
