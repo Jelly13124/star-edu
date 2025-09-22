@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ausHero from "@/assets/aus-hero.jpg";
+import { Shield, RefreshCw, Headphones, Lock, DollarSign, TrendingUp } from "lucide-react";
 
 const CountryAUS = () => {
   const stats = [
@@ -17,12 +18,12 @@ const CountryAUS = () => {
   ];
 
   const guarantees = [
-    { title: "合同保障", description: "未达目标分数，按合同极速退款" },
-    { title: "更换导师", description: "对导师不满意，无条件更换" },
-    { title: "课程试听", description: "首节课不满意，全额退款" },
-    { title: "信息保密", description: "对学生所有信息，严格保密" },
-    { title: "消费透明", description: "辅导费用清晰透明，无隐性消费" },
-    { title: "成果反馈", description: "全程跟踪反馈，确保好成绩" }
+    { title: "合同保障", description: "未达目标分数，按合同极速退款", icon: Shield },
+    { title: "更换导师", description: "对导师不满意，无条件更换", icon: RefreshCw },
+    { title: "课程试听", description: "首节课不满意，全额退款", icon: Headphones },
+    { title: "信息保密", description: "对学生所有信息，严格保密", icon: Lock },
+    { title: "消费透明", description: "辅导费用清晰透明，无隐性消费", icon: DollarSign },
+    { title: "成果反馈", description: "全程跟踪反馈，确保好成绩", icon: TrendingUp }
   ];
 
   return (
@@ -85,7 +86,7 @@ const CountryAUS = () => {
             {guarantees.map((guarantee, index) => (
               <div key={index} className="text-center p-6">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+                  <guarantee.icon className="w-8 h-8 text-blue-500" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{guarantee.title}</h3>
                 <p className="text-gray-600">{guarantee.description}</p>
