@@ -55,13 +55,13 @@ const PublicitySection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-orange-50 to-yellow-50">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
       <div className="container mx-auto px-4">
         {/* Stats Section */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-5xl font-bold text-orange-500 mb-2">{stat.number}</div>
+              <div className="text-5xl font-bold text-blue-500 mb-2">{stat.number}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{stat.label}</h3>
               <p className="text-sm text-gray-500">{stat.description}</p>
             </div>
@@ -76,8 +76,8 @@ const PublicitySection = () => {
                 onClick={() => setActiveTab("studying")}
                 className={`px-8 py-3 rounded-full font-medium transition-all ${
                   activeTab === "studying"
-                    ? "bg-orange-500 text-white shadow-md"
-                    : "text-gray-600 hover:text-orange-500"
+                    ? "bg-blue-500 text-white shadow-md"
+                    : "text-gray-600 hover:text-blue-500"
                 }`}
               >
                 📖 留学中
@@ -86,8 +86,8 @@ const PublicitySection = () => {
                 onClick={() => setActiveTab("appeal")}
                 className={`px-8 py-3 rounded-full font-medium transition-all ${
                   activeTab === "appeal"
-                    ? "bg-orange-500 text-white shadow-md"
-                    : "text-gray-600 hover:text-orange-500"
+                    ? "bg-blue-500 text-white shadow-md"
+                    : "text-gray-600 hover:text-blue-500"
                 }`}
               >
                 🔷 学业申诉
