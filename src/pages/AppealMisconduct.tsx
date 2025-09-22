@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check, ArrowRight, Shield, Users, Clock, Star, MessageCircle, Headphones } from "lucide-react";
 import ConsultationDialog from "@/components/ConsultationDialog";
 import UniversityCoverageSection from "@/components/UniversityCoverageSection";
-import AppealTeacherSection from "@/components/AppealTeacherSection";
+import TeacherTeamSection from "@/components/TeacherTeamSection";
 import { useState } from "react";
 
 const AppealMisconduct = () => {
@@ -229,7 +229,7 @@ const AppealMisconduct = () => {
       </section>
 
       <ConsultationDialog open={dialogOpen} onOpenChange={setDialogOpen} />
-      <AppealTeacherSection />
+      <TeacherTeamSection />
       <UniversityCoverageSection />
       <Footer />
     </div>

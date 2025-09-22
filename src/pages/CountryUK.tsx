@@ -1,9 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ConsultationDialog from "@/components/ConsultationDialog";
 import ukHero from "@/assets/uk-hero.jpg";
 import { Shield, RefreshCw, Headphones, Lock, DollarSign, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
 const CountryUK = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const stats = [
     { number: "200+", label: "英国院校覆盖", description: "遍布英格兰、苏格兰、威尔士、北爱尔兰" },
     { number: "1,200+", label: "英国导师团队", description: "G5、罗素集团等名校背景" },
@@ -41,7 +44,10 @@ const CountryUK = () => {
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-6xl font-bold mb-6">英国留学</h1>
           <p className="text-2xl mb-8">一站式学业辅导</p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors">
+          <button 
+            onClick={() => setIsDialogOpen(true)}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors"
+          >
             立即咨询
           </button>
         </div>
@@ -97,6 +103,12 @@ const CountryUK = () => {
       </section>
 
       <Footer />
+      
+      {/* Consultation Dialog */}
+      <ConsultationDialog 
+        open={isDialogOpen} 
+        onOpenChange={setIsDialogOpen} 
+      />
     </div>
   );
 };

@@ -1,9 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ConsultationDialog from "@/components/ConsultationDialog";
 import hkHero from "@/assets/hk-hero.jpg";
 import { Shield, RefreshCw, Headphones, Lock, DollarSign, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
 const CountryHK = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const stats = [
     { number: "50+", label: "香港院校覆盖", description: "港三校及其他知名院校全覆盖" },
     { number: "300+", label: "香港导师团队", description: "港大、中大、科大等名校背景" },
@@ -41,7 +44,10 @@ const CountryHK = () => {
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-6xl font-bold mb-6">香港留学</h1>
           <p className="text-2xl mb-8">一站式学业辅导</p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors">
+          <button 
+            onClick={() => setIsDialogOpen(true)}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors"
+          >
             立即咨询
           </button>
         </div>
@@ -97,6 +103,12 @@ const CountryHK = () => {
       </section>
 
       <Footer />
+      
+      {/* Consultation Dialog */}
+      <ConsultationDialog 
+        open={isDialogOpen} 
+        onOpenChange={setIsDialogOpen} 
+      />
     </div>
   );
 };
