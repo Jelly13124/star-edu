@@ -3,8 +3,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, ArrowRight, Shield, Users, Clock, Star, MessageCircle, Headphones } from "lucide-react";
+import ConsultationDialog from "@/components/ConsultationDialog";
+import { useState } from "react";
 
 const TutoringCustom = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  
   const customTypes = [
     { name: "个性化方案", checked: true },
     { name: "专业定制", checked: true },
@@ -74,22 +78,27 @@ const TutoringCustom = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-100 to-sky-100">
+      <section className="relative py-20 bg-gradient-to-br from-amber-700 to-orange-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-800 mb-6">定制辅导服务</h1>
-            <p className="text-xl text-gray-600 mb-8">完全个性化定制，专属导师团队，为您提供最适合的学术解决方案！</p>
+            <h1 className="text-5xl font-bold text-white mb-6">定制辅导服务</h1>
+            <p className="text-xl text-amber-100 mb-8">完全个性化定制，专属导师团队，为您提供最适合的学术解决方案！</p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {customTypes.map((type, index) => (
-                <div key={index} className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                  <Check className="h-4 w-4 text-green-500" />
-                  <span className="font-medium text-gray-700">{type.name}</span>
+                <div key={index} className="flex items-center space-x-2 text-white">
+                  <div className="w-5 h-5 border-2 border-white rounded flex items-center justify-center">
+                    <Check className="h-3 w-3 text-white" />
+                  </div>
+                  <span className="font-medium">{type.name}</span>
                 </div>
               ))}
             </div>
             
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 text-lg font-medium rounded-full">
+            <Button 
+              onClick={() => setDialogOpen(true)}
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-amber-800 px-8 py-3 text-lg font-medium rounded-full transition-all"
+            >
               立即咨询定制服务
             </Button>
           </div>
@@ -132,7 +141,10 @@ const TutoringCustom = () => {
                       </div>
                     ))}
                   </div>
-                  <Button className="bg-blue-500 hover:bg-blue-600 text-white w-full">
+                  <Button 
+                    onClick={() => setDialogOpen(true)}
+                    className="bg-blue-500 hover:bg-blue-600 text-white w-full"
+                  >
                     {product.buttonText}
                   </Button>
                 </CardContent>
@@ -274,6 +286,7 @@ const TutoringCustom = () => {
         </div>
       </section>
 
+      <ConsultationDialog open={dialogOpen} onOpenChange={setDialogOpen} />
       <Footer />
     </div>
   );
