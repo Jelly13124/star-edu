@@ -13,6 +13,11 @@ import TutoringThesis from "./pages/TutoringThesis";
 import TutoringExam from "./pages/TutoringExam";
 import TutoringAssignment from "./pages/TutoringAssignment";
 import TutoringCustom from "./pages/TutoringCustom";
+import AppealFail from "./pages/AppealFail";
+import AppealWithdrawal from "./pages/AppealWithdrawal";
+import AppealMajorChange from "./pages/AppealMajorChange";
+import AppealCustom from "./pages/AppealCustom";
+import AppealMisconduct from "./pages/AppealMisconduct";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +37,11 @@ const App = () => (
           <Route path="/tutoring/exam" element={<TutoringExam />} />
           <Route path="/tutoring/assignment" element={<TutoringAssignment />} />
           <Route path="/tutoring/custom" element={<TutoringCustom />} />
+          <Route path="/appeal/fail" element={<AppealFail />} />
+          <Route path="/appeal/withdrawal" element={<AppealWithdrawal />} />
+          <Route path="/appeal/major-change" element={<AppealMajorChange />} />
+          <Route path="/appeal/custom" element={<AppealCustom />} />
+          <Route path="/appeal/misconduct" element={<AppealMisconduct />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
