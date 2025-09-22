@@ -124,32 +124,131 @@ const TutoringAssignment = () => {
       {/* Process Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">作业辅导全流程</h2>
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-4">
-              {process.map((step, index) => (
-                <div key={index} className="flex flex-col items-center relative">
-                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-lg transition-shadow w-48">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">作业辅导全流程</h2>
+          <div className="max-w-7xl mx-auto">
+            {/* Phase 1 */}
+            <div className="relative mb-20">
+              <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-sky-500 text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
+                阶段一: 需求分析
+              </div>
+              
+              <div className="flex flex-wrap justify-center items-start mt-12 space-x-8 space-y-8">
+                {/* Step 1 */}
+                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.1s'}}>
+                  <div className="bg-gradient-to-br from-blue-500 to-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">
+                    1
+                  </div>
+                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
                     <CardContent className="p-6 text-center">
-                      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white text-xl font-bold">{step.step}</span>
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
-                      <p className="text-gray-600 text-sm">{step.description}</p>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">需求分析</h3>
+                      <p className="text-gray-600 text-sm">详细了解作业要求和难点</p>
                     </CardContent>
                   </Card>
-                  {index < process.length - 1 && (
-                    <div className="hidden lg:block absolute -right-8 top-1/2 transform -translate-y-1/2">
-                      <ArrowRight className="h-6 w-6 text-blue-500" />
-                    </div>
-                  )}
-                  {index < process.length - 1 && (
-                    <div className="lg:hidden mt-4">
-                      <ArrowRight className="h-6 w-6 text-blue-500 rotate-90" />
-                    </div>
-                  )}
+                  {/* Curved connecting line */}
+                  <div className="absolute -right-16 top-8 hidden lg:block">
+                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-blue-500">
+                      <path d="M 10 30 Q 60 10 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
+                    </svg>
+                  </div>
                 </div>
-              ))}
+
+                {/* Step 2 */}
+                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.3s'}}>
+                  <div className="bg-gradient-to-br from-blue-500 to-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">
+                    2
+                  </div>
+                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">导师匹配</h3>
+                      <p className="text-gray-600 text-sm">匹配相关专业的优秀导师</p>
+                    </CardContent>
+                  </Card>
+                  <div className="absolute -right-16 top-8 hidden lg:block">
+                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-blue-500">
+                      <path d="M 10 30 Q 60 50 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.5s'}}>
+                  <div className="bg-gradient-to-br from-blue-500 to-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">
+                    3
+                  </div>
+                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">制定计划</h3>
+                      <p className="text-gray-600 text-sm">制定作业完成时间计划</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+
+            {/* Transition Arrow */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-6 py-2 rounded-full flex items-center space-x-2 shadow-lg">
+                <span className="text-sm font-medium">进入执行阶段</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+
+            {/* Phase 2 */}
+            <div className="relative">
+              <div className="absolute top-0 left-0 bg-gradient-to-r from-sky-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
+                阶段二: 执行完成
+              </div>
+              
+              <div className="flex flex-wrap justify-center items-start mt-12 space-x-8 space-y-8">
+                {/* Step 4 */}
+                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.7s'}}>
+                  <div className="bg-gradient-to-br from-sky-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">
+                    4
+                  </div>
+                  <Card className="bg-gradient-to-br from-sky-50 to-blue-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">指导完成</h3>
+                      <p className="text-gray-600 text-sm">全程指导作业完成过程</p>
+                    </CardContent>
+                  </Card>
+                  <div className="absolute -right-16 top-8 hidden lg:block">
+                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-sky-500">
+                      <path d="M 10 30 Q 60 10 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Step 5 */}
+                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.9s'}}>
+                  <div className="bg-gradient-to-br from-sky-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">
+                    5
+                  </div>
+                  <Card className="bg-gradient-to-br from-sky-50 to-blue-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">质量检查</h3>
+                      <p className="text-gray-600 text-sm">检查作业质量和格式规范</p>
+                    </CardContent>
+                  </Card>
+                  <div className="absolute -right-16 top-8 hidden lg:block">
+                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-sky-500">
+                      <path d="M 10 30 Q 60 50 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Step 6 */}
+                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '1.1s'}}>
+                  <div className="bg-gradient-to-br from-sky-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">
+                    6
+                  </div>
+                  <Card className="bg-gradient-to-br from-sky-50 to-blue-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">按时提交</h3>
+                      <p className="text-gray-600 text-sm">确保作业按时高质量提交</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </div>
