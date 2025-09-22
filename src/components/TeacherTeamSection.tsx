@@ -59,10 +59,10 @@ const TeacherTeamSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section id="teacher-team-section" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">路觅导师团队</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">学佑星途导师团队</h2>
           <p className="text-lg text-gray-600">
             汇聚全球顶尖名校毕业导师，为您提供专业的学术辅导服务
           </p>

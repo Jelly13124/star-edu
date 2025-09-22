@@ -46,7 +46,16 @@ const Header = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button variant="ghost" className="text-nav-text hover:text-primary">
+                <Button 
+                  variant="ghost" 
+                  className="text-nav-text hover:text-primary"
+                  onClick={() => {
+                    if (item.label === "师资团队") {
+                      const section = document.getElementById("teacher-team-section");
+                      section?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   {item.label}
                 </Button>
               )}

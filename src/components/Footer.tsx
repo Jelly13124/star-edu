@@ -25,7 +25,7 @@ const Footer = () => {
                 <span>京公网安备 11010502050010号 京ICP备2020036719号-2</span>
               </div>
               <div className="text-xs text-gray-400 mt-4">
-                © 路觅（北京）教育科技有限公司
+                © 学佑星途（北京）教育科技有限公司
               </div>
             </div>
           </div>

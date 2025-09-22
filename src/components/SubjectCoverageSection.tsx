@@ -27,7 +27,7 @@ const SubjectCoverageSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">全科目覆盖</h2>
           <p className="text-lg text-gray-600">
-            路觅教育辅导涵盖32+个专业领域 数万节课程内容
+            学佑星途教育辅导涵盖32+个专业领域 数万节课程内容
           </p>
         </div>
         
