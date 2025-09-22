@@ -16,7 +16,7 @@ const ServicesSection = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="space-y-16">
           {/* Tutoring Services */}
           <div className="space-y-8">
             <div className="text-center">
