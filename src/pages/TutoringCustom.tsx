@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check, ArrowRight, Shield, Users, Clock, Star, MessageCircle, Headphones } from "lucide-react";
 import ConsultationDialog from "@/components/ConsultationDialog";
 import UniversityCoverageSection from "@/components/UniversityCoverageSection";
+import TutoringTeacherSection from "@/components/TutoringTeacherSection";
 import { useState } from "react";
 
 const TutoringCustom = () => {
@@ -288,6 +289,7 @@ const TutoringCustom = () => {
       </section>
 
       <ConsultationDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      <TutoringTeacherSection />
       <UniversityCoverageSection />
       <Footer />
     </div>
