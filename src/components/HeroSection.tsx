@@ -14,7 +14,7 @@ const HeroSection = () => {
         <h1 className="text-hero-text text-6xl md:text-8xl font-bold leading-tight mb-8">
           留学生辅导
           <br />
-          <span className="text-primary">Lumist</span>
+          <span className="text-primary">学佑星途</span>
           <br />
           就是我们的专长
         </h1>

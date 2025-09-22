@@ -13,9 +13,9 @@ const Header = () => {
     { label: "学业辅导", hasDropdown: true },
     { label: "学业申诉", hasDropdown: true },
     { label: "师资团队", hasDropdown: false },
-    { label: "路觅公开课", hasDropdown: false },
+    { label: "学佑星途公开课", hasDropdown: false },
     { label: "资讯问答", hasDropdown: true },
-    { label: "关于路觅", hasDropdown: true },
+    { label: "关于学佑星途", hasDropdown: true },
   ];
 
   return (
@@ -24,7 +24,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="bg-lumiclass-yellow px-3 py-1 rounded font-bold text-white text-lg">
-            路觅教育
+            学佑星途
           </div>
         </div>
 
