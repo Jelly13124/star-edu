@@ -96,10 +96,29 @@ const Header = () => {
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-background border border-border">
-                    <DropdownMenuItem>选项 1</DropdownMenuItem>
-                    <DropdownMenuItem>选项 2</DropdownMenuItem>
-                    <DropdownMenuItem>选项 3</DropdownMenuItem>
+                  <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
+                    {item.label === "学业辅导" ? (
+                      <>
+                        <DropdownMenuItem asChild>
+                          <Link to="/tutoring/thesis" className="w-full">论文辅导</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/tutoring/exam" className="w-full">考试辅导</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/tutoring/assignment" className="w-full">作业辅导</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/tutoring/custom" className="w-full">定制辅导</Link>
+                        </DropdownMenuItem>
+                      </>
+                    ) : (
+                      <>
+                        <DropdownMenuItem>选项 1</DropdownMenuItem>
+                        <DropdownMenuItem>选项 2</DropdownMenuItem>
+                        <DropdownMenuItem>选项 3</DropdownMenuItem>
+                      </>
+                    )}
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (

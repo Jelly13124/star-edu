@@ -9,6 +9,10 @@ import CountryUK from "./pages/CountryUK";
 import CountryAUS from "./pages/CountryAUS";
 import CountryHK from "./pages/CountryHK";
 import CountryUSA from "./pages/CountryUSA";
+import TutoringThesis from "./pages/TutoringThesis";
+import TutoringExam from "./pages/TutoringExam";
+import TutoringAssignment from "./pages/TutoringAssignment";
+import TutoringCustom from "./pages/TutoringCustom";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/coverage/aus" element={<CountryAUS />} />
           <Route path="/coverage/hk" element={<CountryHK />} />
           <Route path="/coverage/usa" element={<CountryUSA />} />
+          <Route path="/tutoring/thesis" element={<TutoringThesis />} />
+          <Route path="/tutoring/exam" element={<TutoringExam />} />
+          <Route path="/tutoring/assignment" element={<TutoringAssignment />} />
+          <Route path="/tutoring/custom" element={<TutoringCustom />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
