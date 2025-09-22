@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import ConsultationDialog from "@/components/ConsultationDialog";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TeacherTeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,6 +33,18 @@ const TeacherTeamSection = () => {
       }
     };
   }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex >= teachers.length - 6 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? Math.max(0, teachers.length - 6) : prevIndex - 1
+    );
+  };
   const teachers = [
     {
       name: "Peter Chen",
@@ -78,6 +93,22 @@ const TeacherTeamSection = () => {
       specialty: "擅长科目: 医学、心理学、政治学、历史学",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
       flag: "🇯🇵"
+    },
+    {
+      name: "Alex Chen",
+      title: "本科MIT 硕士哈佛",
+      university: "MIT & Harvard University",
+      specialty: "擅长科目: 计算机科学、人工智能、数据科学",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      flag: "🇺🇸"
+    },
+    {
+      name: "Sarah Kim",
+      title: "本科首尔大学 硕士东京大学",
+      university: "Seoul National University & University of Tokyo",
+      specialty: "擅长科目: 商学、经济学、管理学",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=400&h=400&fit=crop&crop=face",
+      flag: "🇰🇷"
     }
   ];
 
@@ -97,58 +128,109 @@ const TeacherTeamSection = () => {
           </p>
         </div>
         
-        {/* All Teachers - Flip Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-16">
-          {teachers.map((teacher, index) => (
+        {/* Teachers Carousel */}
+        <div className="relative mb-16">
+          {/* Navigation Buttons */}
+          <Button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg border border-gray-200 rounded-full w-12 h-12 p-0"
+            size="sm"
+          >
+            <ChevronLeft className="h-6 w-6 text-gray-600" />
+          </Button>
+          
+          <Button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg border border-gray-200 rounded-full w-12 h-12 p-0"
+            size="sm"
+          >
+            <ChevronRight className="h-6 w-6 text-gray-600" />
+          </Button>
+
+          {/* Carousel Container */}
+          <div 
+            ref={carouselRef}
+            className="overflow-hidden"
+          >
             <div 
-              key={index} 
-              className={`group relative perspective-1000 ${
-                isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-6'
-              }`}
+              className="flex transition-transform duration-500 ease-in-out"
               style={{ 
-                transitionDelay: `${index * 100}ms`,
-                transitionDuration: '600ms'
+                transform: `translateX(-${currentIndex * 16.67}%)`,
+                width: `${teachers.length * 16.67}%`
               }}
             >
-              {/* Flip Card Container */}
-              <div className="relative w-full h-64 preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                {/* Front Side - Teacher Photo */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg">
-                  <div className="relative h-full">
-                    <img 
-                      src={teacher.image} 
-                      alt={teacher.name}
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Flag Badge */}
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-sm shadow-md">
-                      {teacher.flag}
-                    </div>
-                    {/* Name Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-                      <h3 className="text-lg font-bold text-white">{teacher.name}</h3>
-                    </div>
-                  </div>
-                </div>
+              {teachers.map((teacher, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 px-3"
+                  style={{ width: '16.67%' }}
+                >
+                  <div 
+                    className={`group relative perspective-1000 ${
+                      isVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-6'
+                    }`}
+                    style={{ 
+                      transitionDelay: `${index * 100}ms`,
+                      transitionDuration: '600ms'
+                    }}
+                  >
+                    {/* Flip Card Container */}
+                    <div className="relative w-full h-64 preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
+                      {/* Front Side - Teacher Photo */}
+                      <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg">
+                        <div className="relative h-full">
+                          <img 
+                            src={teacher.image} 
+                            alt={teacher.name}
+                            className="w-full h-full object-cover"
+                          />
+                          {/* Flag Badge */}
+                          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-sm shadow-md">
+                            {teacher.flag}
+                          </div>
+                          {/* Name Overlay */}
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                            <h3 className="text-lg font-bold text-white">{teacher.name}</h3>
+                          </div>
+                        </div>
+                      </div>
 
-                {/* Back Side - Teacher Details */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-blue-600 to-blue-800">
-                  <div className="p-4 h-full flex flex-col justify-between text-white">
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">{teacher.name}</h3>
-                      <p className="text-blue-200 text-sm mb-2 font-medium">{teacher.title}</p>
-                      <p className="text-blue-100 text-xs mb-3">{teacher.university}</p>
-                    </div>
-                    <div className="text-xs leading-relaxed text-blue-50">
-                      {teacher.specialty}
+                      {/* Back Side - Teacher Details */}
+                      <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-blue-600 to-blue-800">
+                        <div className="p-4 h-full flex flex-col justify-between text-white">
+                          <div>
+                            <h3 className="text-lg font-bold mb-2">{teacher.name}</h3>
+                            <p className="text-blue-200 text-sm mb-2 font-medium">{teacher.title}</p>
+                            <p className="text-blue-100 text-xs mb-3">{teacher.university}</p>
+                          </div>
+                          <div className="text-xs leading-relaxed text-blue-50">
+                            {teacher.specialty}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {Array.from({ length: Math.max(1, teachers.length - 5) }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-blue-600 scale-110' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
         </div>
         
         {/* Stats and Features */}
