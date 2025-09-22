@@ -48,14 +48,6 @@ const TeacherTeamSection = () => {
       flag: "🇺🇸"
     },
     {
-      name: "Amy Qian",
-      title: "本科剑桥",
-      university: "University of Cambridge",
-      specialty: "擅长科目: 数学物理、法律、商业经济学",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=400&h=400&fit=crop&crop=face",
-      flag: "🇺🇰"
-    },
-    {
       name: "Yiming Li", 
       title: "本科UCLA 博士斯坦福",
       university: "UCLA & Stanford University",
@@ -69,14 +61,6 @@ const TeacherTeamSection = () => {
       university: "Imperial College London",
       specialty: "擅长科目: 医学、数理科学、人工智能及数据分析",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      flag: "🇺🇰"
-    },
-    {
-      name: "Zhao Shunan",
-      title: "本科牛津",
-      university: "University of Oxford",
-      specialty: "擅长科目: 生物医学、法律经济学及社会科学等",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face",
       flag: "🇺🇰"
     },
     {
