@@ -55,11 +55,11 @@ const TutoringExam = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-amber-700 to-orange-800">
+      <section className="relative py-20 bg-gradient-to-br from-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold text-white mb-6">留学生考试辅导</h1>
-            <p className="text-xl text-amber-100 mb-8">1v1考试冲刺指导，掌握答题技巧，轻松应对各类考试！</p>
+            <p className="text-xl text-sky-100 mb-8">1v1考试冲刺指导，掌握答题技巧，轻松应对各类考试！</p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {examTypes.map((type, index) => (
@@ -74,7 +74,7 @@ const TutoringExam = () => {
             
             <Button 
               onClick={() => setDialogOpen(true)}
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-amber-800 px-8 py-3 text-lg font-medium rounded-full transition-all"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-800 px-8 py-3 text-lg font-medium rounded-full transition-all"
             >
               立即咨询考试辅导
             </Button>
