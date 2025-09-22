@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Clock, User, FileCheck, Award, Lock, Target, FileText, Users, RefreshCw, CheckCircle, AlertCircle } from "lucide-react";
 
 const PublicitySection = () => {
-  const [activeTab, setActiveTab] = useState("studying");
 
   const stats = [
     {
@@ -68,72 +67,35 @@ const PublicitySection = () => {
           ))}
         </div>
 
-        {/* Service Tabs */}
+        {/* Country Coverage Section */}
         <div className="mb-16">
-          <div className="flex justify-center mb-8">
-            <div className="bg-white rounded-full p-1 shadow-lg">
-              <button
-                onClick={() => setActiveTab("studying")}
-                className={`px-8 py-3 rounded-full font-medium transition-all ${
-                  activeTab === "studying"
-                    ? "bg-blue-500 text-white shadow-md"
-                    : "text-gray-600 hover:text-blue-500"
-                }`}
-              >
-                📖 留学中
-              </button>
-              <button
-                onClick={() => setActiveTab("appeal")}
-                className={`px-8 py-3 rounded-full font-medium transition-all ${
-                  activeTab === "appeal"
-                    ? "bg-blue-500 text-white shadow-md"
-                    : "text-gray-600 hover:text-blue-500"
-                }`}
-              >
-                🔷 学业申诉
-              </button>
-            </div>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">覆盖院校/地区</h2>
+          <div className="flex justify-center space-x-4">
+            <Link
+              to="/coverage/uk"
+              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
+            >
+              🇬🇧 英国
+            </Link>
+            <Link
+              to="/coverage/aus"
+              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
+            >
+              🇦🇺 澳洲
+            </Link>
+            <Link
+              to="/coverage/hk"
+              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
+            >
+              🇭🇰 香港
+            </Link>
+            <Link
+              to="/coverage/usa"
+              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
+            >
+              🇺🇸 美国
+            </Link>
           </div>
-
-          {/* Tab Content */}
-          {activeTab === "studying" && (
-            <div>
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">🔶 课程辅导</h3>
-                <p className="text-gray-600">TUTORING</p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {studyingServices.map((service, index) => (
-                  <Card key={index} className="bg-white hover:shadow-lg transition-all duration-200">
-                    <CardContent className="p-6 text-center">
-                      <h4 className="font-semibold text-gray-800 mb-2">{service.name}</h4>
-                      <p className="text-sm text-gray-600">{service.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {activeTab === "appeal" && (
-            <div>
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">🔷 学业申诉</h3>
-                <p className="text-gray-600">ACADEMIC APPEAL</p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto">
-                {appealServices.map((service, index) => (
-                  <Badge
-                    key={index}
-                    variant="secondary"
-                    className="px-4 py-2 text-sm bg-blue-100 text-blue-700 hover:bg-blue-200 cursor-pointer transition-colors"
-                  >
-                    {service}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Service Guarantees */}
