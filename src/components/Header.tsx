@@ -17,7 +17,6 @@ const Header = () => {
     { label: "学业辅导", hasDropdown: true },
     { label: "学业申诉", hasDropdown: true },
     { label: "师资团队", hasDropdown: false },
-    { label: "资讯问答", hasDropdown: true },
     { label: "关于学佑星途", hasDropdown: true },
   ];
 

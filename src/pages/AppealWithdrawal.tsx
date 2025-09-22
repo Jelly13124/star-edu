@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, ArrowRight, Shield, Users, Clock, Star, MessageCircle, Headphones } from "lucide-react";
 import ConsultationDialog from "@/components/ConsultationDialog";
+import UniversityCoverageSection from "@/components/UniversityCoverageSection";
 import { useState } from "react";
 
 const AppealWithdrawal = () => {
@@ -193,6 +194,7 @@ const AppealWithdrawal = () => {
       </section>
 
       <ConsultationDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      <UniversityCoverageSection />
       <Footer />
     </div>
   );
