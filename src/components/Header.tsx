@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import logo from "@/assets/logo.jpg";
 
 const Header = () => {
   const [isRegionDropdownOpen, setIsRegionDropdownOpen] = useState(false);
@@ -26,9 +27,11 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <div className="bg-lumiclass-yellow px-3 py-1 rounded font-bold text-white text-lg hover:opacity-90 transition-opacity">
-              学佑星途
-            </div>
+            <img 
+              src={logo} 
+              alt="学佑星途 - SCHOLARGUARD" 
+              className="h-10 w-auto hover:opacity-90 transition-opacity"
+            />
           </Link>
         </div>
 
