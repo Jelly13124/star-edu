@@ -47,6 +47,23 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        lumiclass: {
+          yellow: "hsl(var(--lumiclass-yellow))",
+          "yellow-dark": "hsl(var(--lumiclass-yellow-dark))",
+          orange: "hsl(var(--lumiclass-orange))",
+        },
+        hero: {
+          text: "hsl(var(--hero-text))",
+        },
+        nav: {
+          text: "hsl(var(--nav-text))",
+        },
+        stats: {
+          bg: "hsl(var(--stats-bg))",
+        },
+        service: {
+          card: "hsl(var(--service-card))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
