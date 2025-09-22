@@ -7,32 +7,27 @@ const ServicesSection = () => {
   ];
 
   const appealServices = [
-    "挂科被退学", "学术不端", "非常规撤课", "挂科申诉", 
-    "学位申诉", "必修课挂科被退学", "学术不端教授meeting", 
-    "涉嫌学术不端", "被指控学术不端", "ai学术不端", 
-    "停学复学申诉", "EC/SC申请", "学位提档"
+    "挂科被退学", "学术不端", "非常规撤课", "挂科申诉",
+    "学位申诉", "必修课挂科被退学", "学术不端教授meeting", "涉嫌学术不端",
+    "被指控学术不端", "ai学术不端", "停学复学申诉", "EC/SC申请",
+    "学位提档"
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Tutoring Services */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="text-center">
-              <div className="w-24 h-24 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">辅</span>
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold mb-4">课程辅导</h2>
+              <h2 className="text-3xl font-bold mb-8 text-gray-800">课程辅导</h2>
             </div>
             
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {tutoringServices.map((service, index) => (
-                <Card key={index} className="bg-service-card hover:shadow-md transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <span className="text-sm font-medium">{service}</span>
+                <Card key={index} className="bg-white border-0 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <span className="text-base font-medium text-gray-700">{service}</span>
                   </CardContent>
                 </Card>
               ))}
@@ -40,21 +35,16 @@ const ServicesSection = () => {
           </div>
 
           {/* Academic Appeal Services */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="text-center">
-              <div className="w-24 h-24 mx-auto mb-4 bg-destructive/10 rounded-full flex items-center justify-center">
-                <div className="w-16 h-16 bg-destructive rounded-full flex items-center justify-center">
-                  <span className="text-destructive-foreground font-bold text-lg">申</span>
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold mb-4">学业申诉</h2>
+              <h2 className="text-3xl font-bold mb-8 text-gray-800">学业申诉</h2>
             </div>
             
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {appealServices.map((service, index) => (
-                <Card key={index} className="bg-service-card hover:shadow-md transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <span className="text-sm font-medium">{service}</span>
+                <Card key={index} className="bg-white border-0 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <span className="text-base font-medium text-gray-700">{service}</span>
                   </CardContent>
                 </Card>
               ))}

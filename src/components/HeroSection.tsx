@@ -21,21 +21,21 @@ const HeroSection = () => {
       </div>
 
       {/* Fixed sidebar with contact options */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-20 bg-lumiclass-yellow rounded-l-lg shadow-lg">
-        <div className="flex flex-col p-2 space-y-2">
-          <div className="bg-white rounded p-2 text-center text-xs font-medium">
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-20 bg-primary rounded-l-lg shadow-lg">
+        <div className="flex flex-col p-1 space-y-1">
+          <div className="bg-white rounded px-3 py-2 text-center text-xs font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors">
             在线咨询
           </div>
-          <div className="bg-white rounded p-2 text-center text-xs font-medium">
+          <div className="bg-white rounded px-3 py-2 text-center text-xs font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors">
             课程预习
           </div>
-          <div className="bg-white rounded p-2 text-center text-xs font-medium">
+          <div className="bg-white rounded px-3 py-2 text-center text-xs font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors">
             同步辅导
           </div>
-          <div className="bg-white rounded p-2 text-center text-xs font-medium">
+          <div className="bg-white rounded px-3 py-2 text-center text-xs font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors">
             论文辅导
           </div>
-          <div className="bg-white rounded p-2 text-center text-xs font-medium">
+          <div className="bg-white rounded px-3 py-2 text-center text-xs font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors">
             申诉咨询
           </div>
         </div>
