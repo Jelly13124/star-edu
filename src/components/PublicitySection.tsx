@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Shield, Clock, User, FileCheck, Award, Lock, Target, FileText, Users, RefreshCw, CheckCircle, AlertCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const PublicitySection = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const stats = [
     {
@@ -23,34 +23,19 @@ const PublicitySection = () => {
     }
   ];
 
-  const studyingServices = [
-    { name: "课程指导", description: "课程规划合理安排，无压按课业" },
-    { name: "专业课预习", description: "提前预习知识要点，轻松一学" },
-    { name: "课业同步辅导", description: "课程进度保持学习，及时解决课堂疑点" },
-    { name: "作业讲解辅导", description: "专项讲解深度解析，扎实基础理解要点" },
-    { name: "考试冲刺辅导", description: "知识点训练提升，冲刺高分答题技巧配合" },
-    { name: "安心学Max", description: "分数导向深度定制，好成绩有保障" }
-  ];
-
-  const appealServices = [
-    "一对一不挂", "保学复学申请", "EC/SC申请", "学位提档", "挂科救援",
-    "论文托科", "一考二升三学", "申诉顺利补考机会", "补考保过",
-    "ECON", "review分数", "学术不端怎么办", "论文印刷错误DDL", "补考机会"
-  ];
-
   const guarantees = [
-    { icon: Shield, title: "师资保障", subtitle: "学历背景真实可查", description: "从严筛选导师资质" },
-    { icon: Clock, title: "时效保障", subtitle: "客服用规范高标准", description: "响应及时，不过期" },
-    { icon: User, title: "个性化定制", subtitle: "根据学生个体需求", description: "定制提高培优方案" },
-    { icon: FileCheck, title: "审核保障", subtitle: "自然流言第三方反馈", description: "确认、联系等保证正确" },
-    { icon: Award, title: "全职导师", subtitle: "全职专业师资团队", description: "保障授课和学习督导质量" },
-    { icon: Lock, title: "信息保障", subtitle: "严格个人信息保护制度", description: "保障隐私，不外露" },
-    { icon: Target, title: "目标追踪", subtitle: "学习进度全程跟踪", description: "确保学习目标实现" },
-    { icon: FileText, title: "合同保障", subtitle: "所有服务签订正式合同", description: "维护双方合法权益" },
-    { icon: Users, title: "独家导师", subtitle: "专属一对一专业指导", description: "全程教授学术性辅导及教学" },
-    { icon: AlertCircle, title: "申诉保障", subtitle: "全程协力、清楚", description: "增加申诉材料及会议参与" },
-    { icon: CheckCircle, title: "流程完善", subtitle: "流程温馨完善，无死角", description: "服务流程标准化管理" },
-    { icon: RefreshCw, title: "退费保障", subtitle: "不合教育目标，无条件", description: "实行退费，零风险" }
+    { title: "师资保障", description: "学历背景真实可查，从严筛选导师资质" },
+    { title: "时效保障", description: "客服用规范高标准，响应及时，不过期" },
+    { title: "个性化定制", description: "根据学生个体需求，定制提高培优方案" },
+    { title: "审核保障", description: "自然流言第三方反馈，确认、联系等保证正确" },
+    { title: "全职导师", description: "全职专业师资团队，保障授课和学习督导质量" },
+    { title: "信息保障", description: "严格个人信息保护制度，保障隐私，不外露" },
+    { title: "目标追踪", description: "学习进度全程跟踪，确保学习目标实现" },
+    { title: "合同保障", description: "所有服务签订正式合同，维护双方合法权益" },
+    { title: "独家导师", description: "专属一对一专业指导，全程教授学术性辅导及教学" },
+    { title: "申诉保障", description: "全程协力、清楚，增加申诉材料及会议参与" },
+    { title: "流程完善", description: "流程温馨完善，无死角，服务流程标准化管理" },
+    { title: "退费保障", description: "不合教育目标，无条件实行退费，零风险" }
   ];
 
   return (
@@ -67,60 +52,71 @@ const PublicitySection = () => {
           ))}
         </div>
 
-        {/* Country Coverage Section */}
+        {/* Country Coverage Dropdown */}
         <div className="mb-16">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">覆盖院校/地区</h2>
-          <div className="flex justify-center space-x-4">
-            <Link
-              to="/coverage/uk"
-              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
-            >
-              🇬🇧 英国
-            </Link>
-            <Link
-              to="/coverage/aus"
-              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
-            >
-              🇦🇺 澳洲
-            </Link>
-            <Link
-              to="/coverage/hk"
-              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
-            >
-              🇭🇰 香港
-            </Link>
-            <Link
-              to="/coverage/usa"
-              className="px-8 py-3 rounded-full font-medium transition-all bg-blue-500 text-white shadow-md hover:bg-blue-600"
-            >
-              🇺🇸 美国
-            </Link>
+          <div className="flex justify-center">
+            <div className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg shadow-sm inline-flex items-center font-medium transition-all"
+              >
+                覆盖地区/院校
+                <ChevronDown className={`ml-2 h-4 w-4 transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                  <div className="py-2">
+                    <Link
+                      to="/coverage/uk"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      🇬🇧 英国
+                    </Link>
+                    <Link
+                      to="/coverage/hk"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      🇭🇰 香港
+                    </Link>
+                    <Link
+                      to="/coverage/aus"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      🇦🇺 澳洲
+                    </Link>
+                    <Link
+                      to="/coverage/usa"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      🇺🇸 美国
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Service Guarantees */}
-        <div>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">服务保障</h2>
-            <p className="text-lg text-gray-600">全方位服务保障，让您无后顾之忧</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {guarantees.map((guarantee, index) => {
-              const IconComponent = guarantee.icon;
-              return (
-                <Card key={index} className="bg-white hover:shadow-lg transition-all duration-200 group">
-                  <CardContent className="p-6 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4 group-hover:bg-green-200 transition-colors">
-                      <IconComponent className="w-8 h-8 text-green-600" />
-                    </div>
-                    <h4 className="font-semibold text-gray-800 mb-1">{guarantee.title}</h4>
-                    <p className="text-sm font-medium text-gray-600 mb-2">{guarantee.subtitle}</p>
-                    <p className="text-xs text-gray-500">{guarantee.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+        {/* Service Guarantees - Compact */}
+        <div className="bg-white rounded-lg p-6 shadow-lg">
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">服务保障</h2>
+          <p className="text-center text-gray-600 mb-6 text-sm">全方位服务保障，让您无后顾之忧</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {guarantees.map((guarantee, index) => (
+              <div key={index} className="text-center p-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                </div>
+                <h3 className="font-medium text-gray-800 mb-1 text-sm">{guarantee.title}</h3>
+                <p className="text-xs text-gray-600 leading-tight">{guarantee.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
