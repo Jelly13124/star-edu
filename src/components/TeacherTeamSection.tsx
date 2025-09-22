@@ -1,28 +1,60 @@
 const TeacherTeamSection = () => {
-  const teacherStats = [
+  const teachers = [
     {
-      title: "海外名校背景",
-      subtitle: "TOP100名校毕业导师",
-      percentage: "97.2%",
-      description: "来自哈佛、耶鲁、牛津、剑桥等世界顶尖学府"
+      name: "Amy Qian",
+      title: "本科编桥",
+      university: "剑桥大学",
+      specialty: "数学物理、法律、商业经济学",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=400&h=400&fit=crop&crop=face"
     },
     {
-      title: "专业学科覆盖",
-      subtitle: "涵盖主流专业领域",
-      percentage: "32+",
-      description: "商科、工科、理科、文科全方位学科支持"
+      name: "Yiming Li", 
+      title: "本科UCLA 博士斯坦福",
+      university: "斯坦福大学",
+      specialty: "数理方面、心理学、商业分析",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
     },
     {
-      title: "教学经验丰富",
-      subtitle: "平均教学经验",
-      percentage: "5+年",
-      description: "深谙海外教育体系，熟悉各类作业考试要求"
+      name: "Riko",
+      title: "本科帝国理工",
+      university: "帝国理工学院",
+      specialty: "医学、数理科学、人工智能及数据分析",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
     },
     {
-      title: "服务质量保证",
-      subtitle: "学生满意度",
-      percentage: "98.5%",
-      description: "专业、耐心、负责的一对一定制化辅导"
+      name: "Zhao Shunan",
+      title: "本科牛津",
+      university: "牛津大学",
+      specialty: "生物医、法律经济学及社会科学等",
+      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Wesley",
+      title: "本科对外经济贸易比较大学",
+      university: "对外经济贸易大学",
+      specialty: "金融经济学类、法律经济学",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Vivian Chao",
+      title: "本科及硕士东京大学、博士研大学",
+      university: "东京大学",
+      specialty: "医学、心理、政务、历史学",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Jessie",
+      title: "本科威威威威大学 硕士斯坦福",
+      university: "斯坦福大学",
+      specialty: "密码学、历史、心理学、哲学",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Peter Chen",
+      title: "本科案宗、硕士UCL",
+      university: "伦敦大学学院",
+      specialty: "经济统金融法、天体文献大学",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
     }
   ];
 
@@ -30,26 +62,33 @@ const TeacherTeamSection = () => {
     <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">师资团队</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">路觅导师团队</h2>
           <p className="text-lg text-gray-600">
             汇聚全球顶尖名校毕业导师，为您提供专业的学术辅导服务
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teacherStats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">{stat.percentage}</div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{stat.title}</h3>
-                <p className="text-sm font-medium text-gray-600 mb-3">{stat.subtitle}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{stat.description}</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+          {teachers.map((teacher, index) => (
+            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={teacher.image} 
+                  alt={teacher.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold text-gray-800 mb-1">{teacher.name}</h3>
+                <p className="text-sm text-gray-600 mb-2">{teacher.title}</p>
+                <p className="text-sm font-medium text-blue-600 mb-2">{teacher.university}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{teacher.specialty}</p>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center">
           <div className="bg-white rounded-lg p-8 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">我们的导师优势</h3>
             <div className="grid md:grid-cols-3 gap-6 text-left">
