@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, Shield, Users, Clock, Star, MessageCircle, Headphones } from "lucide-react";
 
 const TutoringAssignment = () => {
   const assignmentTypes = [
@@ -29,12 +29,12 @@ const TutoringAssignment = () => {
   ];
 
   const guarantees = [
-    { title: "质量保障", description: "确保作业质量达到要求标准" },
-    { title: "按时完成", description: "严格按照截止时间完成作业" },
-    { title: "原创保障", description: "确保作业原创性和学术诚信" },
-    { title: "专业指导", description: "相关专业导师一对一指导" },
-    { title: "修改服务", description: "提供作业修改和完善服务" },
-    { title: "24小时支持", description: "提供24小时在线答疑支持" }
+    { title: "质量保障", description: "确保作业质量达到要求标准", icon: Shield },
+    { title: "按时完成", description: "严格按照截止时间完成作业", icon: Clock },
+    { title: "原创保障", description: "确保作业原创性和学术诚信", icon: Star },
+    { title: "专业指导", description: "相关专业导师一对一指导", icon: Users },
+    { title: "修改服务", description: "提供作业修改和完善服务", icon: MessageCircle },
+    { title: "24小时支持", description: "提供24小时在线答疑支持", icon: Headphones }
   ];
 
   const process = [
@@ -110,7 +110,7 @@ const TutoringAssignment = () => {
               <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+                    <guarantee.icon className="h-8 w-8 text-blue-500" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">{guarantee.title}</h3>
                   <p className="text-gray-600 text-sm">{guarantee.description}</p>
@@ -125,18 +125,32 @@ const TutoringAssignment = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">作业辅导全流程</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((step, index) => (
-              <Card key={index} className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-xl font-bold">{step.step}</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-4">
+              {process.map((step, index) => (
+                <div key={index} className="flex flex-col items-center relative">
+                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-lg transition-shadow w-48">
+                    <CardContent className="p-6 text-center">
+                      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-white text-xl font-bold">{step.step}</span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
+                      <p className="text-gray-600 text-sm">{step.description}</p>
+                    </CardContent>
+                  </Card>
+                  {index < process.length - 1 && (
+                    <div className="hidden lg:block absolute -right-8 top-1/2 transform -translate-y-1/2">
+                      <ArrowRight className="h-6 w-6 text-blue-500" />
+                    </div>
+                  )}
+                  {index < process.length - 1 && (
+                    <div className="lg:hidden mt-4">
+                      <ArrowRight className="h-6 w-6 text-blue-500 rotate-90" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
