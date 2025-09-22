@@ -115,6 +115,24 @@ const Header = () => {
                           <Link to="/tutoring/custom" className="w-full">定制辅导</Link>
                         </DropdownMenuItem>
                       </>
+                    ) : item.label === "学业申诉" ? (
+                      <>
+                        <DropdownMenuItem asChild>
+                          <Link to="/appeal/fail" className="w-full">挂科申诉</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/appeal/withdrawal" className="w-full">退学申诉</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/appeal/major-change" className="w-full">换改专业申诉</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/appeal/custom" className="w-full">定制申诉</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/appeal/misconduct" className="w-full">学术不端申诉</Link>
+                        </DropdownMenuItem>
+                      </>
                     ) : (
                       <>
                         <DropdownMenuItem>选项 1</DropdownMenuItem>
