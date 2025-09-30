@@ -6,6 +6,7 @@ import { Check, ArrowRight, Shield, Users, Clock, Star, MessageCircle, Headphone
 import ConsultationDialog from "@/components/ConsultationDialog";
 import UniversityCoverageSection from "@/components/UniversityCoverageSection";
 import TeacherTeamSection from "@/components/TeacherTeamSection";
+import SuccessCasesSection from "@/components/SuccessCasesSection";
 import { useState } from "react";
 
 const AppealWithdrawal = () => {
@@ -136,22 +137,39 @@ const AppealWithdrawal = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">退学申诉流程</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">退学申诉流程</h2>
           <p className="text-xl text-center text-gray-600 mb-16">专业团队助您合理维权</p>
           
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 shadow-lg">
+          <div className="max-w-7xl mx-auto">
+            {/* Top Row - Steps 1-4 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+              {processSteps.slice(0, 4).map((step, index) => (
+                <div key={index} className="relative flex flex-col items-center text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-xl hover:scale-110 transition-transform duration-300">
                     {step.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
-                  <p className="text-sm text-gray-600">{step.description}</p>
-                  {index < processSteps.length - 1 && (
-                    <ArrowRight className="hidden lg:block w-6 h-6 text-sky-500 mt-4" />
+                  <h3 className="text-lg font-bold text-gray-800 mb-3">{step.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                  {index < 3 && (
+                    <ArrowRight className="hidden md:block absolute -right-4 top-8 w-8 h-8 text-blue-400" />
+                  )}
+                </div>
+              ))}
+            </div>
+            
+            {/* Bottom Row - Steps 5-7 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {processSteps.slice(4).map((step, index) => (
+                <div key={index} className="relative flex flex-col items-center text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-xl hover:scale-110 transition-transform duration-300">
+                    {step.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-3">{step.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                  {index < 2 && (
+                    <ArrowRight className="hidden md:block absolute -right-4 top-8 w-8 h-8 text-blue-400" />
                   )}
                 </div>
               ))}
@@ -195,6 +213,7 @@ const AppealWithdrawal = () => {
       </section>
 
       <ConsultationDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      <SuccessCasesSection />
       <TeacherTeamSection />
       <UniversityCoverageSection />
       <Footer />

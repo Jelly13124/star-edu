@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import ConsultationDialog from "@/components/ConsultationDialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// Import tutor images
+import tutor1 from "@/assets/tutor/158b98675dc4743b946759b5b86ecc07.png";
+import tutor2 from "@/assets/tutor/27b96337ba9492f767a8fcfe3f4c2ebd.png";
+import tutor3 from "@/assets/tutor/2aaa0c70143205d70b2b433ee3e8c442.png";
+import tutor4 from "@/assets/tutor/2eeb4fad3fec660f2d6e0ba5764126c2.png";
+import tutor5 from "@/assets/tutor/5124c9d5a4cc9f83183055eb96b75e2a.png";
+import tutor6 from "@/assets/tutor/7340bd8900f4770dfb4ba263911a72a1.png";
+import tutor7 from "@/assets/tutor/a8f8103f2d0a1f1313ced44bce601255.png";
+
 const TeacherTeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -51,7 +60,7 @@ const TeacherTeamSection = () => {
       title: "本科曼大, 硕士UCL",
       university: "曼彻斯特大学 & UCL",
       specialty: "擅长科目: 经济类和金融类, 英文学术论文等",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      image: tutor1,
       flag: "🇺🇰"
     },
     {
@@ -59,7 +68,7 @@ const TeacherTeamSection = () => {
       title: "硕士纽约大学",
       university: "New York University",
       specialty: "擅长科目: 基础编程等",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: tutor2,
       flag: "🇺🇸"
     },
     {
@@ -67,7 +76,7 @@ const TeacherTeamSection = () => {
       title: "本科UCLA 博士斯坦福",
       university: "UCLA & Stanford University",
       specialty: "擅长科目: 数理方面、心理学、商业分析",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: tutor3,
       flag: "🇺🇸"
     },
     {
@@ -75,7 +84,7 @@ const TeacherTeamSection = () => {
       title: "本科帝国理工",
       university: "Imperial College London",
       specialty: "擅长科目: 医学、数理科学、人工智能及数据分析",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      image: tutor4,
       flag: "🇺🇰"
     },
     {
@@ -83,7 +92,7 @@ const TeacherTeamSection = () => {
       title: "本科对外经济贸易大学",
       university: "University of International Business and Economics",
       specialty: "擅长科目: 金融经济学类、法律经济学",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: tutor5,
       flag: "🇨🇳"
     },
     {
@@ -91,7 +100,7 @@ const TeacherTeamSection = () => {
       title: "本科及硕士东京大学",
       university: "University of Tokyo",
       specialty: "擅长科目: 医学、心理学、政治学、历史学",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      image: tutor6,
       flag: "🇯🇵"
     },
     {
@@ -99,7 +108,7 @@ const TeacherTeamSection = () => {
       title: "本科MIT 硕士哈佛",
       university: "MIT & Harvard University",
       specialty: "擅长科目: 计算机科学、人工智能、数据科学",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: tutor7,
       flag: "🇺🇸"
     },
     {
@@ -107,7 +116,7 @@ const TeacherTeamSection = () => {
       title: "本科首尔大学 硕士东京大学",
       university: "Seoul National University & University of Tokyo",
       specialty: "擅长科目: 商学、经济学、管理学",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=400&h=400&fit=crop&crop=face",
+      image: tutor1,
       flag: "🇰🇷"
     }
   ];

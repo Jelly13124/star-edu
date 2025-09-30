@@ -12,11 +12,10 @@ const HeroSection = () => {
       {/* Hero content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-hero-text text-6xl md:text-8xl font-bold leading-tight mb-8">
-          留学生辅导
           <br />
           <span className="text-primary">学佑星途</span>
           <br />
-          就是我们的专长
+          留学生的守护星
         </h1>
       </div>
 

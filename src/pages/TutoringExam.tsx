@@ -45,11 +45,13 @@ const TutoringExam = () => {
 
   const process = [
     { step: "1", title: "能力评估", description: "全面评估学生当前学习水平" },
-    { step: "2", title: "制定计划", description: "制定个性化复习计划" },
-    { step: "3", title: "知识梳理", description: "系统梳理考试重点知识" },
-    { step: "4", title: "强化训练", description: "针对性强化训练练习" },
-    { step: "5", title: "模拟考试", description: "真实环境模拟考试" },
-    { step: "6", title: "考前冲刺", description: "考前最后冲刺指导" }
+    { step: "2", title: "匹配专业导师", description: "精准匹配考试科目专业导师" },
+    { step: "3", title: "制定计划", description: "制定个性化复习备考计划" },
+    { step: "4", title: "1v1专业辅导", description: "导师一对一系统知识梳理" },
+    { step: "5", title: "强化训练", description: "针对性强化训练和真题练习" },
+    { step: "6", title: "模拟考试", description: "真实环境全真模拟考试" },
+    { step: "7", title: "查漏补缺", description: "针对薄弱环节专项突破" },
+    { step: "8", title: "考前冲刺", description: "考前最后冲刺和答题技巧" }
   ];
 
   return (
@@ -136,112 +138,42 @@ const TutoringExam = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">考试辅导全流程</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">考试辅导全流程</h2>
+          <p className="text-xl text-center text-gray-600 mb-16">系统化复习方案，助您轻松应考</p>
+          
           <div className="max-w-7xl mx-auto">
-            {/* Phase 1 */}
-            <div className="relative mb-20">
-              <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-sky-500 text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
-                阶段一: 评估准备
-              </div>
-              
-              <div className="flex flex-wrap justify-center items-start mt-12 space-x-8 space-y-8">
-                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.1s'}}>
-                  <div className="bg-gradient-to-br from-blue-500 to-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">1</div>
-                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">能力评估</h3>
-                      <p className="text-gray-600 text-sm">全面评估学生当前学习水平</p>
-                    </CardContent>
-                  </Card>
-                  <div className="absolute -right-16 top-8 hidden lg:block">
-                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-blue-500">
-                      <path d="M 10 30 Q 60 10 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
-                    </svg>
+            {/* Top Row - Steps 1-4 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+              {process.slice(0, 4).map((step, index) => (
+                <div key={index} className="relative flex flex-col items-center text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-xl hover:scale-110 transition-transform duration-300">
+                    {step.step}
                   </div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-3">{step.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                  {index < 3 && (
+                    <ArrowRight className="hidden md:block absolute -right-4 top-8 w-8 h-8 text-blue-400" />
+                  )}
                 </div>
-
-                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.3s'}}>
-                  <div className="bg-gradient-to-br from-blue-500 to-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">2</div>
-                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">制定计划</h3>
-                      <p className="text-gray-600 text-sm">制定个性化复习计划</p>
-                    </CardContent>
-                  </Card>
-                  <div className="absolute -right-16 top-8 hidden lg:block">
-                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-blue-500">
-                      <path d="M 10 30 Q 60 50 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.5s'}}>
-                  <div className="bg-gradient-to-br from-blue-500 to-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">3</div>
-                  <Card className="bg-gradient-to-br from-blue-50 to-sky-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">知识梳理</h3>
-                      <p className="text-gray-600 text-sm">系统梳理考试重点知识</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+              ))}
             </div>
-
-            <div className="flex justify-center mb-12">
-              <div className="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-6 py-2 rounded-full flex items-center space-x-2 shadow-lg">
-                <span className="text-sm font-medium">进入冲刺阶段</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute top-0 left-0 bg-gradient-to-r from-sky-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg">
-                阶段二: 冲刺应考
-              </div>
-              
-              <div className="flex flex-wrap justify-center items-start mt-12 space-x-8 space-y-8">
-                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.7s'}}>
-                  <div className="bg-gradient-to-br from-sky-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">4</div>
-                  <Card className="bg-gradient-to-br from-sky-50 to-blue-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">强化训练</h3>
-                      <p className="text-gray-600 text-sm">针对性强化训练练习</p>
-                    </CardContent>
-                  </Card>
-                  <div className="absolute -right-16 top-8 hidden lg:block">
-                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-sky-500">
-                      <path d="M 10 30 Q 60 10 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
-                    </svg>
+            
+            {/* Bottom Row - Steps 5-8 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {process.slice(4).map((step, index) => (
+                <div key={index} className="relative flex flex-col items-center text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-xl hover:scale-110 transition-transform duration-300">
+                    {step.step}
                   </div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-3">{step.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                  {index < 3 && (
+                    <ArrowRight className="hidden md:block absolute -right-4 top-8 w-8 h-8 text-blue-400" />
+                  )}
                 </div>
-
-                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '0.9s'}}>
-                  <div className="bg-gradient-to-br from-sky-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">5</div>
-                  <Card className="bg-gradient-to-br from-sky-50 to-blue-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">模拟考试</h3>
-                      <p className="text-gray-600 text-sm">真实环境模拟考试</p>
-                    </CardContent>
-                  </Card>
-                  <div className="absolute -right-16 top-8 hidden lg:block">
-                    <svg width="120" height="60" viewBox="0 0 120 60" className="text-sky-500">
-                      <path d="M 10 30 Q 60 50 110 30" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="5,5" opacity="0.7" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center relative animate-fade-in" style={{animationDelay: '1.1s'}}>
-                  <div className="bg-gradient-to-br from-sky-500 to-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold shadow-lg mb-4">6</div>
-                  <Card className="bg-gradient-to-br from-sky-50 to-blue-50 hover:shadow-xl transition-all duration-300 w-64 hover-scale">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">考前冲刺</h3>
-                      <p className="text-gray-600 text-sm">考前最后冲刺指导</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
