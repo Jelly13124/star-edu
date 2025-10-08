@@ -18,6 +18,9 @@ import AppealWithdrawal from "./pages/AppealWithdrawal";
 import AppealMajorChange from "./pages/AppealMajorChange";
 import AppealCustom from "./pages/AppealCustom";
 import AppealMisconduct from "./pages/AppealMisconduct";
+import AboutJourney from "./pages/AboutJourney";
+import AboutAssurance from "./pages/AboutAssurance";
+import AboutContact from "./pages/AboutContact";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +45,9 @@ const App = () => (
           <Route path="/appeal/major-change" element={<AppealMajorChange />} />
           <Route path="/appeal/custom" element={<AppealCustom />} />
           <Route path="/appeal/misconduct" element={<AppealMisconduct />} />
+          <Route path="/about/journey" element={<AboutJourney />} />
+          <Route path="/about/assurance" element={<AboutAssurance />} />
+          <Route path="/about/contact" element={<AboutContact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

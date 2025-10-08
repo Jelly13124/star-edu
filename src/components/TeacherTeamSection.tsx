@@ -4,13 +4,13 @@ import ConsultationDialog from "@/components/ConsultationDialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import tutor images
-import tutor1 from "@/assets/tutor/158b98675dc4743b946759b5b86ecc07.png";
-import tutor2 from "@/assets/tutor/27b96337ba9492f767a8fcfe3f4c2ebd.png";
-import tutor3 from "@/assets/tutor/2aaa0c70143205d70b2b433ee3e8c442.png";
-import tutor4 from "@/assets/tutor/2eeb4fad3fec660f2d6e0ba5764126c2.png";
-import tutor5 from "@/assets/tutor/5124c9d5a4cc9f83183055eb96b75e2a.png";
-import tutor6 from "@/assets/tutor/7340bd8900f4770dfb4ba263911a72a1.png";
-import tutor7 from "@/assets/tutor/a8f8103f2d0a1f1313ced44bce601255.png";
+import tutor1 from "@/assets/tutor/31CDFD30@03DDAD3B.CB92DC68.jpeg";
+import tutor2 from "@/assets/tutor/5E663886@DB20ED5E.CB92DC68.png";
+import tutor3 from "@/assets/tutor/C7D02A3D@BAD1F124.CB92DC68.jpeg";
+import tutor4 from "@/assets/tutor/C8B309FA@1B1B8A1B.CB92DC68.png";
+import tutor5 from "@/assets/tutor/D235BC2C@366F8761.CB92DC68.jpeg";
+import tutor6 from "@/assets/tutor/F7010360@C60A6A7A.CB92DC68.jpeg";
+import tutor7 from "@/assets/tutor/F7310263@229A9139.CB92DC68.jpeg";
 
 const TeacherTeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);

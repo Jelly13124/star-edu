@@ -104,9 +104,15 @@ const Header = () => {
                       </>
                     ) : (
                       <>
-                        <DropdownMenuItem>走进学佑星途</DropdownMenuItem>
-                        <DropdownMenuItem>学佑星途保障</DropdownMenuItem>
-                        <DropdownMenuItem>联系我们</DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/about/journey" className="w-full">走进学佑星途</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/about/assurance" className="w-full">学佑星途保障</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/about/contact" className="w-full">联系我们</Link>
+                        </DropdownMenuItem>
                       </>
                     )}
                   </DropdownMenuContent>
